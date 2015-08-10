@@ -1,0 +1,37 @@
+<head>
+  <title>tableExample</title>
+</head>
+
+<body>
+  {{> table}}
+</body>
+
+<template name="table">
+  <table>
+    <tr>
+      <th>
+        _id
+      </th>
+      <th>cost</th>
+      <th>amount</th>
+      <th>total</th>
+    </tr>
+    {{#each tableItems}} {{> tableItem}} {{/each}}
+  </table>
+  overall total: {{total}}
+</template>
+
+<template name="tableItem">
+  <tr class="t{{_id}}">
+    <td>
+      {{_id}}
+    </td>
+    <td>
+      <input class="cost" type="number" name="cost" value="0">
+    </td>
+    <td>
+      <input class="amount" type="number" name="amount" value="0">
+    </td>
+    <td>{{total}}</td>
+  </tr>
+</template>
